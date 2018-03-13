@@ -26,7 +26,7 @@ if grep -q 'WordCounter()[[:blank:]]*throws RemoteException' './WordCounter.java
 else
     echo "WordCounter: constructor WordCounter() and count() should throw RemoteException"
 fi
-if grep -q 'count(String message) throws RemoteException' './WordCounter.java'; then
+if grep -q 'count[[:blank:]]*(String message) throws RemoteException' './WordCounter.java'; then
     :
 else
     echo "WordCounter: constructor WordCounter() and count() should throw RemoteException"
