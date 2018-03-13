@@ -1,4 +1,4 @@
-if grep -q 'count(String message) throws RemoteException' './WordCount.java'; then
+if grep -q 'count[[:blank:]]*(String message) throws RemoteException' './WordCount.java'; then
     :
 else
     echo "WordCount"
@@ -46,26 +46,26 @@ fi
 if grep -q 'import java.rmi.registry.\*;' './MessageBox.java'; then
     :
 else
-    echo "MessageBox"
+    echo "MessageBox: import java.rmi.registry"
 fi
 
 if grep -q 'args\[0]' './MessageBox.java'; then
     :
 else
-    echo "MessageBox"
+    echo "MessageBox: args[0]"
 fi
 if grep -q 'public MessageBox(String host)[[:blank:]]*{' './MessageBox.java'; then
     :
 else
-    echo "MessageBox"
+    echo "MessageBox: public MessageBox(String host){"
 fi
 if grep -q 'Registry registry = LocateRegistry.getRegistry(host);' './MessageBox.java'; then
     :
 else
-    echo "MessageBox"
+    echo "MessageBox: Registry registry = LocateRegistry.getRegistry(host);"
 fi
-if grep -q 'wordCounter[[:blank:]]*= (WordCount)registry.lookup("WordCounter");' './MessageBox.java'; then
+if grep -q 'wordCounter[[:blank:]]*= (WordCount)[[:blank:]]*registry.lookup("WordCounter");' './MessageBox.java'; then
     :
 else
-    echo "MessageBox"
+    echo "MessageBox: wordCounter = (WordCount)registry.lookup("WordCounter");"
 fi
