@@ -21,7 +21,7 @@ else
     echo "WordCounter: Extends UnicastRemoteObject, Implements WordCount interface"
 fi
 
-if grep -q 'WordCounter() throws RemoteException' './WordCounter.java'; then
+if grep -q 'WordCounter()[[:blank:]]*throws RemoteException' './WordCounter.java'; then
     :
 else
     echo "WordCounter: constructor WordCounter() and count() should throw RemoteException"
