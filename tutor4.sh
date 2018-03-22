@@ -34,7 +34,7 @@ else
     echo "TicketServer.java: String rmiurl = "rmi://localhost/TicketMachine";"
 fi
 
-if grep -q 'Reference ref = new Reference("TicketMachine", new StringRefAddr("URL", rmiurl));' './TicketServer.java'; then
+if grep -q 'Reference ref = new Reference[[:blank:]]*("TicketMachine", new StringRefAddr("URL", rmiurl));' './TicketServer.java'; then
     :
 else
     echo "TicketServer.java: Reference ref = new Reference("TicketMachine", new StringRefAddr("URL", rmiurl));"
