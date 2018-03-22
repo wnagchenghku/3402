@@ -1,10 +1,10 @@
-if grep -q 'env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");' './Customer.java'; then
+if grep -q 'env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory")[[:blank:]]*;' './Customer.java'; then
     :
 else
     echo "Customer.java: env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");"
 fi
 
-if grep -q 'env.put(Context.SECURITY_CREDENTIALS, "secret");' './Customer.java'; then
+if grep -q 'env.put(Context.SECURITY_CREDENTIALS, "secret")[[:blank:]]*;' './Customer.java'; then
     :
 else
     echo "Customer.java: env.put(Context.SECURITY_CREDENTIALS, "secret");"
